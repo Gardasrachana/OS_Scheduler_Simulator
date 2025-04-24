@@ -1,0 +1,82 @@
+/* Basic page styling */
+body {
+   font-family: 'Segoe UI', sans-serif;
+   background-color: #eaf2f8;
+   margin: 0;
+   padding: 20px;
+   transition: background-color 2s ease;
+}
+
+
+/* Heading styling */
+h1 {
+   text-align: center;
+   color: #333;
+}
+
+/* Section styling */
+.input-section, .scheduler-section, .output-section {
+   background: #fff;
+   margin: 20px auto;
+   padding: 15px;
+   border-radius: 8px;
+   max-width: 600px;
+   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Label styling */
+label {
+   display: block;
+   margin: 10px 0 5px;
+   font-weight: bold;
+}
+
+/* Input fields */
+input[type="text"], input[type="number"] {
+   width: 100%;
+   padding: 8px;
+   margin: 5px 0 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+   padding: 10px 15px;
+   margin: 10px 5px 0;
+   border: none;
+   background-color: #007BFF;
+   color: white;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #0056b3;
+}
+
+/* Dropdown */
+select {
+   width: 100%;
+   padding: 8px;
+   margin: 10px 0;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+
+/* Output table */
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 15px;
+}
+
+table, th, td {
+   border: 1px solid #ccc;
+}
+
+th, td {
+   padding: 8px;
+   text-align: center;
+}

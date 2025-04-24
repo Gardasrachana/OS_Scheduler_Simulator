@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OS Scheduling Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    const colors = ['#eaf2f8', '#fef9e7', '#e8f8f5', '#f9ebea', '#f4ecf7'];
+    let colorIndex = 0;
+
+    setInterval(() => {
+        colorIndex = (colorIndex + 1) % colors.length;
+        document.body.style.backgroundColor = colors[colorIndex];
+    }, 5000); // every 5 seconds
+</script>
+
+<body>
+    <h1>🧠 OS Scheduling Simulator</h1>
+
+    <section class="input-section">
+        <h2>Add Process</h2>
+        <label>Process ID: <input type="text" id="pid"></label>
+        <label>Arrival Time: <input type="number" id="arrivalTime"></label>
+        <label>Burst Time: <input type="number" id="burstTime"></label>
+        <label>Priority (optional): <input type="number" id="priority"></label>
+        <button onclick="addProcess()">➕ Add Process</button>
+        <button onclick="clearProcesses()">🗑️ Clear All</button>
+    </section>
+
+    <section class="scheduler-section">
+        <h2>Select Scheduling Algorithm</h2>
+        <select id="algorithm">
+            <option value="fcfs">FCFS (First Come First Serve)</option>
+            <option value="sjf">SJF (Shortest Job First)</option>
+            <option value="priority">Priority Scheduling</option>
+            <option value="rr">Round Robin</option>
+        </select>
+        <label id="quantumLabel" style="display:none;">Quantum: <input type="number" id="quantum" value="2"></label>
+        <button onclick="simulate()">🚀 Simulate</button>
+    </section>
+
+    <section class="output-section">
+        <h2>Gantt Chart</h2>
+        <div id="ganttChart"></div>
+
+        <h2>Results</h2>
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Process</th>
+                    <th>Arrival</th>
+                    <th>Burst</th>
+                    <th>Completion</th>
+                    <th>Turnaround</th>
+                    <th>Waiting</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- 👇👇 Quantum toggle script added below -->
+    <script>
+        document.getElementById("algorithm").addEventListener("change", function () {
+            const isRR = this.value === "rr";
+            document.getElementById("quantumLabel").style.display = isRR ? "block" : "none";
+        });
+    </script>
+</body>
+</html>
